@@ -5,48 +5,104 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Company Profile</title>
     <link rel="stylesheet" href="css/style.css">
+    
 </head>
 <body>
     <header>
-        <img src="assets/Logo FD.jpg" height="100px" alt="logo">
+        <img src="assets/Logo FD.jpg" height="70px" alt="logo">
         <ul class="navigation">
-            <li>home</li>
-            <li>our profile</li>
-            <li>message us</li>
+            <button><a href="index.html">Home</a></button>
+            <button><a href="profile.html">Our Profile</a></button>
+            <button><a href="porto.html">Portofolio</a></button>
+            <button><a href="pesan2.html">Message Us</a></button>
         </ul>
 
 
     </header>
+    <h3> Hallo , Welcome to my website</h3></br>
+    <div class="slideshow-container">
 
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 3</div>
+          <img src="assets/jembatan.jpg" style="width:100%">
+          
+        </div>
+        
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 3</div>
+          <img src="assets/night.jpg" style="width:100%">
+          
+        </div>
+        
+        <div class="mySlides fade">
+          <div class="numbertext">3 / 3</div>
+          <img src="assets/senja.jpg" style="width:100%">
+          
+        </div>
+        
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+        
+        </div>
+        <br>
+        
+        <div style="text-align:center">
+          <span class="dot" onclick="currentSlide(1)"></span> 
+          <span class="dot" onclick="currentSlide(2)"></span> 
+          <span class="dot" onclick="currentSlide(3)"></span> 
+        </div>
+    
     <div class="our-office">
+        
         <div>
-            <div class="circle-image" style="background-image: url('assets/team.JPG');"></div>
+            <div class="circle-image" style="background-image: url('assets/jakarta.png');"></div>
             <h5>Jakarta</h5>
         </div>
         <div>
-            <div class="circle-image"></div>
+            <div class="circle-image" style="background-image: url('assets/bandung.png');"></div>
             <h5>Bandung</h5> 
         </div>
         <div>
-            <div class="circle-image"></div>
-            <h5>Surabaya</h5>
+            <div class="circle-image" style="background-image: url('assets/medan.png');"></div>
+            <h5>Medan</h5>
         </div>
     </div>
 
     <div class="inquiry-box">
-        <form class="inquiry-form">
-            <label for="name">Nama</label>
-            <input type="text" id="name" name="name">
-            <label for="gender">Jenis Kelamin</label>
-            <select id="gender">
-                <option value="male">Laki-Laki</option>
-                <option value="female">Perempuan</option>
-            </select>
+        <form id="inquiry-form" class="inquiry-form">
+        
+            <label for="name">Nama:</label>
+            <input required="true" placeholder="Full name anda" type="text" id="name" name="full-name">
+            <br/>
+            <label for="date">Tanggal Lahir :</label>
+            <input required="true" type="date" name="birth-date"/>
+             
+             <p>Jenis Kelamin :</p>
+            <input type="radio" id="male" name="gender" value="male"/>
+            <label for="male">Laki-Laki</label>
+            <input type="radio" id="female" name="gender" value="male"/>
+            <label for="female">Perempuan</label><br/>
+            
+            <textarea placeholder="pesan" name="messages" id="pesan-input" rows="5" cols="30"></textarea>
+        <br/>
+            <button type="button" value="submit" onclick="submitform()" >submit</button>
+            
+               
+            
         </form>
-        <div class="output">
-            <!-- add output in here -->
+        
+        <div id="output" class="output"  name="output">
+            <h5>Current date and time : <span id="datetime"></span></h5>
+            <h5>Nama :<span id="full-name"></span></h5>
+            <h5>Tanggal lahir :<span id="birth-date"></span></h5>
+            <h5>Jenis Kelamin :<span id="gender"></span></h5>
+            <h5>Pesan :<span id="messages"></span></h5>
+               
         </div>
+        
     </div>
     
 </body>
+
+    <script src="JS/script.js"></script>
 </html>
